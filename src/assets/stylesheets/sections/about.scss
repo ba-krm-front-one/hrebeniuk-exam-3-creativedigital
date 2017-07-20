@@ -1,0 +1,52 @@
+@import "../variables.scss";
+
+#about{
+  @extend .flex-container;
+  margin-top: 124px;
+  margin-bottom: 120px;
+}
+.about{
+  &__header{
+    height: 555px;
+    width: 380px;
+    background:  url("../images/background-about-us.jpg") 50% no-repeat;
+    background-size: cover;
+    &--title{
+      @include title-section($light-content-content);
+      padding-top: 40px;
+      &:before {
+        display: block;
+        content: " ";
+        height: 54px;
+        width: 54px;
+        background: url("../images/about.png") no-repeat;
+        margin: 0 auto 20px;
+      }
+    }
+    @media  screen and (max-width: 1110px) {
+      width: 100%;
+      height: 250px;
+    }
+  }
+  &__description{
+    flex-grow: 1;
+    max-width: 670px;
+    min-width: 300px;
+    padding-top: 76px;
+    padding-left: 25px;
+    &--text{
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    @media  screen and (max-width: 1110px) {
+      max-width: 100%;
+      padding-right: 25px;
+    }
+  }
+
+  &__view-button{
+    @include simple-button($content-color);
+    margin-top: 65px;
+  }
+}

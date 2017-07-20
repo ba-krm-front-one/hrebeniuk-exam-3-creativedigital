@@ -1,0 +1,84 @@
+@import "../variables.scss";
+
+#home {
+  background: $main-color url("../images/header-backgound.png") 50% no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 35px 0;
+  color: $light-content-content;
+  position: relative;
+
+}
+.logo-elegant{
+  float: left;
+}
+.home {
+  &__navigation {
+    float: right;
+    font-size: 24px;
+  }
+  &__banner {
+    padding: 270px 0;
+    &--title {
+      font: $section-title-font;
+      font-size: 72px;
+      position: relative;
+      text-transform: uppercase;
+      @media all and (max-width: 800px){
+        font-size: 40px;
+      }
+
+    }
+    &--text {
+      font: $content-font;
+      font-size: 30px;
+      font-style: italic;
+      margin-top: 10px;
+      @media all and (max-width: 800px){
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.main-menu {
+  @media all and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-end;
+  }
+  &__items {
+    font-family: $section-title-font;
+    display: inline-block;
+    margin-right: 25px;
+    @media all and (max-width: 1000px){
+      display: block;
+      text-align: right;
+      margin: 0 0 10px;
+    }
+  }
+  &__link {
+    font-weight: 600;
+    color: $light-content-content;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:after {
+      display: block;
+      content: '' ;
+      position: absolute;
+      opacity: 1;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      background-color:  $light-content-content;
+      transition: transform 0.3s;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+    }
+
+  }
+}

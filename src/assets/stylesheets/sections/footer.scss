@@ -1,0 +1,87 @@
+@import "../variables.scss";
+
+.footer{
+  height: 185px;
+  background: $main-color;
+  padding:75px 35px;
+  &__copyright {
+    @extend .flex-container;
+    color: $light-content-content;
+    &--date{
+      text-align: left;
+      flex-grow: 1;
+      @media  screen and (max-width:700px){
+        text-align: center;
+        order: 2;
+        margin-top: 20px;
+      }
+    }
+    &--social{
+      text-align: right;
+      flex-grow: 1;
+      @media  screen and (max-width:700px){
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+/* icons - animation*/
+.social-bar{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  content: " ";
+  border-radius: 50%;
+  position: relative;
+  overflow:hidden;
+  &:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    bottom: 0;
+    opacity: .6;
+    height: 120%;
+    left: -10%;
+    transform: skewX(25deg);
+  }
+  &:hover:after {
+    width: 120%;
+  }
+  &--behance{
+    background: url("../images/social/behance.svg");
+    &:after{
+      background: #00b2ff;
+    }
+  }
+  &--linked{
+    background: url("../images/social/linked-in.svg");
+    &:after{
+      background: #0077b5;
+    }
+  }
+  &--google{
+    background: url("../images/social/google.svg");
+    &:after{
+      background:	#ea4335;
+    }
+  }
+  &--facebook{
+    background: url("../images/social/facebook.svg");
+    &:after{
+      background: #3b5998;
+    }
+  }
+  &--twitter{
+    background: url("../images/social/twitter.svg");
+    &:after{
+      background: #00b2ff;
+    }
+  }
+  &+&{
+    margin-left: 25px;
+  }
+}

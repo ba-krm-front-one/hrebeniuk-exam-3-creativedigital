@@ -1,0 +1,29 @@
+@import "normalize.scss";
+@import "layout.scss";
+@import "variables.scss";
+
+
+body {
+  background: $additional-color;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-family: $content-font;
+  user-select: none;
+}
+
+.container-wrapper {
+  max-width: 1210px;
+  min-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+
+@import "sections/home.scss";
+@import "sections/about.scss";
+@import "sections/service.scss";
+@import "sections/works.scss";
+@import "sections/team.scss";
+@import "sections/contact.scss";
+@import "sections/footer.scss";

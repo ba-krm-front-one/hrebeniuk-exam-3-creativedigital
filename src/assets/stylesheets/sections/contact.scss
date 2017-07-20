@@ -1,0 +1,135 @@
+@import "../variables.scss";
+
+#contact-us {
+  background: $main-color;
+  position: relative;
+}
+
+.back-map {
+  height:  100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  opacity: .5;
+}
+
+.address {
+  position: relative;
+  left: calc(100% - 91px);
+  background-color: rgba($additional-color, 0.5);
+  width: 348px;
+  height: 91px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    left: calc(100% - 348px);
+    transition: 0.9s;
+  }
+}
+
+.contacts {
+  padding: 54px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &_title {
+    @include title-section ($light-content-content);
+    &:before {
+      display: block;
+      content: " ";
+      height: 60px;
+      width: 60px;
+      background: url("../images/section-title-icons/location.png") no-repeat;
+      margin: 0 auto 20px;
+    }
+  }
+  &__address {
+    margin: 50px 0;
+  }
+  &__address--location {
+    @extend .address;
+    &:before {
+      content: " ";
+      width: 91px;
+      height: 91px;
+      background: $main-color url("../images/address.png") no-repeat 50%;
+      margin-right: 40px;
+    }
+  }
+  &__address--phone {
+    @extend .address;
+    &:before {
+      content: " ";
+      width: 91px;
+      height: 91px;
+      background: $main-color url("../images/phone.png") no-repeat 50%;
+      margin-right: 40px;
+    }
+  }
+  &__back-scroll{
+    position: absolute;
+    right: 100px;
+    bottom: 15px;
+    z-index: 2;
+    width: 85px;
+    height: 85px;
+    background: rgba($main-color,0.5) url("../images/arrow-top.png") no-repeat 50%;
+    &:hover {
+      background-color: $main-color;
+      bottom: 25px;
+      transition: all 0.7s;
+    }
+  }
+}
+
+.contacts__form {
+  @extend .flex-container;
+  max-width: 860px;
+  position: relative;
+  margin: auto;
+  &--input {
+    font-style: italic;
+    background: rgba($light-content-content, 0.5);
+    outline: none;
+    width: 366px;
+    min-width: 250px;
+    flex-grow: 1;
+    line-height: 56px;
+    padding-left: 27px;
+    margin: 0 15px 27px;
+    border-radius: 4px;
+    border: none;
+    color: $light-content-content;
+    &:nth-child(3) {
+      width: 100%;
+      margin-bottom: 0;
+      height: 200px;
+
+    }
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-moz-placeholder,
+    :-ms-input-placeholder {
+      color: $light-content-content;
+    }
+    &:focus {
+      background: rgba($light-content-content, 0.9);
+    }
+  }
+  &--button {
+    width: 293px;
+    height: 70px;
+    border-radius: 4px;
+    background: $main-color;
+    border-bottom: 4px solid #8783b0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $light-content-content;
+    margin: 55px auto;
+    &:hover {
+      box-shadow: 0 0 20px $content-color;
+    }
+  }
+}
+

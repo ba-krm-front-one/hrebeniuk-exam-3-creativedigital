@@ -1,0 +1,78 @@
+@import "../variables.scss";
+
+.team {
+  padding: 54px 0;
+  &_title {
+    @include title-section ($content-color);
+    &:before {
+      display: block;
+      content: " ";
+      height: 60px;
+      width: 60px;
+      background: url("../images/section-title-icons/team.png") no-repeat;
+      margin: 54px auto 20px;
+    }
+  }
+  &-slider{
+    max-width: 1130px;
+    height: 500px;
+    margin: 65px auto 98px;
+  }
+}
+
+.slider {
+  &__member {
+    position: relative;
+    background: $light-content-content;
+    width: 350px;
+    margin:  130px 15px 0;
+  }
+  &__photo {
+    position: absolute;
+    border-radius: 50%;
+    border: 10px solid $additional-color;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  &__description {
+    padding-top: 165px;
+    &--name {
+      color: $main-color;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+      font-size: 24px;
+    }
+    &--occupation {
+      font-style: italic;
+      font-size: 24px;
+    }
+  }
+  &__links {
+    margin-top: 50px;
+    background: $main-color;
+    height: 70px;
+    bottom: 0;
+    padding-top: 20px;
+  }
+}
+
+/* arrow color */
+
+.team-slider .flickity-prev-next-button {
+  background: transparent;
+  &.previous{
+    left: -6%;
+    @media all and (max-width: 1000px) {
+      display: none;
+    }
+  }
+  &.next{
+    right: -6%;
+    @media all and (max-width: 1000px) {
+  display: none;
+}
+}
+}
+.team-slider .flickity-prev-next-button:hover {
+  background: $main-color;
+}
